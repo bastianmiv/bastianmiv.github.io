@@ -5,9 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bastian Manintveld</title>
   <meta name="description" content="Bastian Manintveld — Multi-exit founder and operator. Building and scaling technology businesses across Europe and the Americas." />
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bamamedia.com/" />
+  <meta property="og:title" content="Bastian Manintveld" />
+  <meta property="og:description" content="Multi-exit founder and operator. Building and scaling technology businesses across Europe and the Americas." />
+  <meta property="og:image" content="https://www.bamamedia.com/photo.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.bamamedia.com/" />
+  <meta property="twitter:title" content="Bastian Manintveld" />
+  <meta property="twitter:description" content="Multi-exit founder and operator. Building and scaling technology businesses across Europe and the Americas." />
+  <meta property="twitter:image" content="https://www.bamamedia.com/photo.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -38,6 +54,7 @@
       justify-content: center;
       padding: 8vh 6vw 8vh 8vw;
       min-height: 100vh;
+      order: 1;
     }
 
     .name {
@@ -122,6 +139,7 @@
       top: 0;
       height: 100vh;
       overflow: hidden;
+      order: 2;
     }
 
     .photo-panel img {
@@ -130,12 +148,10 @@
       object-fit: cover;
       object-position: center top;
       display: block;
-      /* Fade left edge into the cream background */
       mask-image: linear-gradient(to right, transparent 0%, black 18%);
       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%);
     }
 
-    /* Placeholder when photo.jpg not yet added */
     .photo-placeholder {
       width: 100%;
       height: 100%;
@@ -150,32 +166,28 @@
     }
 
     /* ── MOBILE ── */
-   @media (max-width: 768px) {
-  body { flex-direction: column; }
-
-  /* Force photo first on mobile */
-  .photo-panel { order: -1; }
-  .text-panel  { order: 0; }
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
 
       .photo-panel {
+        order: -1;
         position: relative;
         width: 100%;
-        height: 75vw;
-        min-height: 280px;
-        max-height: 480px;
+        height: 100vw;
+        min-height: 350px;
+        max-height: 600px;
         flex: none;
-        /* reset desktop sticky */
         top: auto;
       }
 
       .photo-panel img {
-        object-position: center 20%;
-        /* fade bottom edge into page background */
-        mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        object-position: center 15%;
+        mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
       }
 
       .text-panel {
+        order: 2;
         flex: none;
         width: 100%;
         min-height: auto;
@@ -196,7 +208,6 @@
 
   <!-- TEXT -->
   <div class="text-panel">
-
     <h1 class="name">
       Bastian
       <em>Manintveld</em>
@@ -204,11 +215,9 @@
 
     <p class="bio">
       Hello, my name is Bastian Manintveld. I'm a multi-exit founder and operator.<br><br>
-
       I build and scale technology-enabled businesses across Europe and the Americas —
       spanning SaaS, marketplaces, and content. I've led P&amp;Ls, raised significant funding,
       and executed buy- and sell-side transactions across multiple ventures.<br><br>
-
       I co-founded <a href="https://bebanjo.com" target="_blank" rel="noopener">BeBanjo</a>,
       enterprise media SaaS that powers operations behind some of the world's leading media companies
       — which we exited twice. I'm co-founder and director at <a href="https://2btube.com" target="_blank" rel="noopener">2btube</a>,
@@ -227,10 +236,9 @@
     <div class="links">
       <a href="https://www.linkedin.com/in/bastianm/" class="link-btn" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
     </div>
-
   </div>
 
-  <!-- PHOTO — drop your headshot as photo.jpg in the same folder -->
+  <!-- PHOTO -->
   <div class="photo-panel" role="img" aria-label="Portrait of Bastian Manintveld">
     <img
       src="photo.jpg"
