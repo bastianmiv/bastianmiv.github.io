@@ -150,8 +150,12 @@
     }
 
     /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      body { flex-direction: column; }
+   @media (max-width: 768px) {
+  body { flex-direction: column; }
+
+  /* Force photo first on mobile */
+  .photo-panel { order: -1; }
+  .text-panel  { order: 0; }
 
       .photo-panel {
         position: relative;
