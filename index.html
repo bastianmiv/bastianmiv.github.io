@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bastian Manintveld</title>
+  <meta name="description" content="Bastian Manintveld — Multi-exit founder and operator. Building and scaling technology businesses across Europe and the Americas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5F1EB;
+      --dark:  #1A1A18;
+      --mid:   #8A8680;
+      --accent:#B8975A;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* ── LEFT: text panel ── */
+    .text-panel {
+      flex: 0 0 52%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8vh 6vw 8vh 8vw;
+      min-height: 100vh;
+    }
+
+    .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(3.5rem, 6vw, 6.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.015em;
+      color: var(--dark);
+      margin-bottom: 3rem;
+    }
+
+    .name em {
+      display: block;
+      font-style: italic;
+      color: var(--mid);
+    }
+
+    .bio {
+      font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+      line-height: 1.9;
+      color: var(--dark);
+      max-width: 440px;
+      margin-bottom: 1.75rem;
+    }
+
+    .bio a {
+      color: var(--dark);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(26,26,24,0.25);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .bio a:hover { color: var(--accent); border-color: var(--accent); }
+
+    .personal {
+      font-size: 0.875rem;
+      line-height: 1.85;
+      color: var(--mid);
+      max-width: 440px;
+      margin-bottom: 2.75rem;
+    }
+
+    .personal a {
+      color: var(--mid);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(138,134,128,0.3);
+    }
+
+    .quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+      line-height: 1.35;
+      color: var(--dark);
+      margin-bottom: 3rem;
+      max-width: 400px;
+    }
+
+    .links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .link-btn {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--dark);
+      border-bottom: 1px solid var(--dark);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .link-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ── RIGHT: photo panel ── */
+    .photo-panel {
+      flex: 0 0 48%;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .photo-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      /* Fade left edge into the cream background */
+      mask-image: linear-gradient(to right, transparent 0%, black 18%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%);
+    }
+
+    /* Placeholder when photo.jpg not yet added */
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background: #EAE5DE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 700px) {
+      body { flex-direction: column-reverse; }
+
+      .photo-panel {
+        position: relative;
+        height: 70vw;
+        min-height: 240px;
+        flex: none;
+        width: 100%;
+      }
+
+      .photo-panel img {
+        mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+      }
+
+      .text-panel {
+        flex: none;
+        min-height: auto;
+        padding: 3.5rem 1.75rem 3rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TEXT -->
+  <div class="text-panel">
+
+    <h1 class="name">
+      Bastian
+      <em>Manintveld</em>
+    </h1>
+
+    <p class="bio">
+      Hello, my name is Bastian Manintveld. I'm a multi-exit founder and operator.<br><br>
+
+      I build and scale technology-enabled businesses across Europe and the Americas —
+      spanning SaaS, marketplaces, and content. I've led P&amp;Ls, raised significant funding,
+      and executed buy- and sell-side transactions across multiple ventures.<br><br>
+
+      I co-founded <a href="https://bebanjo.com" target="_blank" rel="noopener">BeBanjo</a>,
+      enterprise media SaaS that powers operations behind some of the world's leading media companies
+      — which we exited twice. I'm co-founder and director at <a href="https://2btube.com" target="_blank" rel="noopener">2btube</a>,
+      the leading Spanish-language digital media company, and principal owner at
+      <a href="https://getyourlawyer.com" target="_blank" rel="noopener">GetYourLawyer</a>,
+      a legal marketplace and SaaS platform in Switzerland.
+    </p>
+
+    <p class="personal">
+      Licensed EASA pilot. Composer, aspiring writer and musician.
+      Active <a href="https://ypo.org" target="_blank" rel="noopener">YPO</a> member. 7 languages.
+    </p>
+
+    <p class="quote">"I believe nothing is impossible."</p>
+
+    <div class="links">
+      <a href="https://www.linkedin.com/in/bastianm/" class="link-btn" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+    </div>
+
+  </div>
+
+  <!-- PHOTO — drop your headshot as photo.jpg in the same folder -->
+  <div class="photo-panel" role="img" aria-label="Portrait of Bastian Manintveld">
+    <img
+      src="photo.jpg"
+      alt="Bastian Manintveld"
+      onerror="this.style.display='none'; this.parentElement.querySelector('.photo-placeholder').style.display='flex';"
+    />
+    <div class="photo-placeholder" style="display:none;" aria-hidden="true">Add photo.jpg</div>
+  </div>
+
+</body>
+</html>
