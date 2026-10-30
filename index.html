@@ -22,7 +22,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,30 +32,37 @@
       --dark:  #1A1A18;
       --mid:   #8A8680;
       --accent:#B8975A;
-      --rule:  rgba(26,26,24,0.12);
+      --rule:  rgba(26,26,24,0.13);
+      --measure: 480px;
     }
 
-    html, body { height: 100%; }
-
+    html { scroll-behavior: smooth; }
     body {
       background: var(--cream);
       color: var(--dark);
       font-family: 'Inter', sans-serif;
       font-weight: 300;
       -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
       display: flex;
+      align-items: flex-start;
     }
 
     /* ── LEFT: text panel ── */
     .text-panel {
       flex: 0 0 52%;
+      padding: 0 5vw 0 8vw;
+      order: 1;
+    }
+
+    .block { max-width: var(--measure); }
+
+    /* Hero fills the first screen */
+    .hero {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 8vh 6vw 8vh 8vw;
-      min-height: 100vh;
-      order: 1;
+      padding: 8vh 0;
     }
 
     .name {
@@ -64,141 +71,111 @@
       font-size: clamp(3.5rem, 6vw, 6.5rem);
       line-height: 0.9;
       letter-spacing: -0.015em;
-      color: var(--dark);
-      margin-bottom: 3rem;
+      margin-bottom: 2.25rem;
     }
 
-    .name em {
-      display: block;
-      font-style: italic;
-      color: var(--mid);
-    }
+    .name em { display: block; font-style: italic; color: var(--mid); }
 
     .bio {
-      font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-      line-height: 1.9;
-      color: var(--dark);
-      max-width: 440px;
-      margin-bottom: 1.75rem;
+      font-size: clamp(0.95rem, 1.05vw, 1.05rem);
+      line-height: 1.82;
+      margin-bottom: 1.5rem;
     }
 
-    .bio a {
-      color: var(--dark);
+    .bio a, .company a.inline {
+      color: inherit;
       text-decoration: none;
       border-bottom: 1px solid rgba(26,26,24,0.25);
       transition: border-color 0.2s, color 0.2s;
     }
-    .bio a:hover { color: var(--accent); border-color: var(--accent); }
+    .bio a:hover, .company a.inline:hover { color: var(--accent); border-color: var(--accent); }
 
     .personal {
       font-size: 0.875rem;
       line-height: 1.85;
       color: var(--mid);
-      max-width: 440px;
-      margin-bottom: 2.75rem;
+      margin-bottom: 2rem;
     }
-
-    .personal a {
-      color: var(--mid);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(138,134,128,0.3);
-    }
+    .personal a { color: var(--mid); text-decoration: none; border-bottom: 1px solid rgba(138,134,128,0.3); }
 
     .quote {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-weight: 300;
-      font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+      font-size: clamp(1.2rem, 1.7vw, 1.5rem);
       line-height: 1.35;
-      color: var(--dark);
-      margin-bottom: 3rem;
       max-width: 400px;
     }
 
-    /* ── Company section ── */
-    .rule {
-      width: 100%;
-      max-width: 440px;
-      height: 1px;
-      background: var(--rule);
-      border: 0;
-      margin-bottom: 2.5rem;
+    /* ── Company ── */
+    .company {
+      padding: 7vh 0 8vh;
+      border-top: 1px solid var(--rule);
     }
 
-    .company { max-width: 440px; margin-bottom: 2.75rem; }
-
     .eyebrow {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--mid);
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
     }
 
     .company-name {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
-      font-size: clamp(1.55rem, 2.4vw, 2rem);
-      line-height: 1.15;
-      letter-spacing: -0.005em;
-      margin-bottom: 1.1rem;
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      margin-bottom: 1.5rem;
     }
 
-    .company p {
-      font-size: 0.9rem;
-      line-height: 1.85;
-      margin-bottom: 1.4rem;
+    .company p.lede {
+      font-size: clamp(0.95rem, 1.05vw, 1.02rem);
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
     }
 
-    .services-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 0.75rem;
-    }
-
-    .services { list-style: none; margin: 0 0 1.5rem; }
+    .services { list-style: none; margin: 0.35rem 0 2.5rem; }
 
     .services li {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      padding-left: 1.15rem;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      padding: 0.85rem 0 0.85rem 1.4rem;
       position: relative;
-      margin-bottom: 0.5rem;
+      border-top: 1px solid var(--rule);
     }
+    .services li:last-child { border-bottom: 1px solid var(--rule); }
 
     .services li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 0.78em;
-      width: 6px;
+      top: 1.62em;
+      width: 7px;
       height: 1px;
       background: var(--accent);
     }
 
+    .engagement {
+      font-size: 0.92rem;
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+    }
+
     .company-meta {
       font-size: 0.78rem;
-      line-height: 1.85;
+      line-height: 1.9;
       color: var(--mid);
+      margin-bottom: 3rem;
     }
-
-    .company-meta a {
-      color: var(--mid);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(138,134,128,0.3);
-    }
+    .company-meta a { color: var(--mid); text-decoration: none; border-bottom: 1px solid rgba(138,134,128,0.3); }
     .company-meta a:hover { color: var(--accent); border-color: var(--accent); }
 
-    .links {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-    }
+    .links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 
     .link-btn {
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       text-decoration: none;
@@ -217,6 +194,7 @@
       height: 100vh;
       overflow: hidden;
       order: 2;
+      align-self: flex-start;
     }
 
     .photo-panel img {
@@ -230,21 +208,16 @@
     }
 
     .photo-placeholder {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       background: #EAE5DE;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--mid);
     }
 
     /* ── MOBILE ── */
     @media (max-width: 768px) {
-      body { flex-direction: column; }
+      body { flex-direction: column; align-items: stretch; }
 
       .photo-panel {
         order: -1;
@@ -265,18 +238,18 @@
 
       .text-panel {
         order: 2;
-        flex: none;
         width: 100%;
-        min-height: auto;
-        padding: 2.5rem 1.75rem 3.5rem;
-        justify-content: flex-start;
+        padding: 0 1.75rem 3.5rem;
       }
 
+      .hero { min-height: auto; padding: 2.5rem 0 3rem; }
+      .company { padding: 3rem 0 2.5rem; }
       .name { font-size: clamp(2.8rem, 13vw, 4.5rem); margin-bottom: 2rem; }
       .bio  { font-size: 1rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
       * { transition-duration: 0.01ms !important; }
     }
   </style>
@@ -285,55 +258,54 @@
 
   <!-- TEXT -->
   <div class="text-panel">
-    <h1 class="name">
-      Bastian
-      <em>Manintveld</em>
-    </h1>
 
-    <p class="bio">
-      Hello, my name is Bastian Manintveld. I'm a multi-exit founder and operator.<br><br>
-      I build and scale technology-enabled media and marketing businesses across Europe and the Americas —
-      spanning SaaS, marketplaces, and film and TV content. I've led P&amp;Ls, raised significant funding,
-      and executed buy- and sell-side transactions across multiple ventures.<br><br>
-      I co-founded <a href="https://bebanjo.com" target="_blank" rel="noopener">BeBanjo</a>,
-      enterprise media SaaS that powers operations behind some of the world's leading media companies
-      — which we exited twice. I'm co-founder and director at <a href="https://2btube.com" target="_blank" rel="noopener">2btube</a>,
-      the leading Spanish-language digital media company, and principal owner at
-      <a href="https://getyourlawyer.ch/en" target="_blank" rel="noopener">GetYourLawyer</a>,
-      a legal marketplace and SaaS platform in Switzerland.
-    </p>
+    <section class="hero block">
+      <h1 class="name">
+        Bastian
+        <em>Manintveld</em>
+      </h1>
 
-    <p class="personal">
-      Licensed EASA pilot. Composer, aspiring writer and musician.
-      Active <a href="https://ypo.org" target="_blank" rel="noopener">YPO</a> member. 7 languages.
-    </p>
+      <p class="bio">
+        Hello, my name is Bastian Manintveld. I'm a multi-exit founder and operator.<br><br>
+        I build and scale technology-enabled media and marketing businesses across Europe and the Americas —
+        spanning SaaS, marketplaces, and film and TV content. I've led P&amp;Ls, raised significant funding,
+        and executed buy- and sell-side transactions across multiple ventures.<br><br>
+        I co-founded <a href="https://bebanjo.com" target="_blank" rel="noopener">BeBanjo</a>,
+        enterprise media SaaS that powers operations behind some of the world's leading media companies
+        — which we exited twice. I'm co-founder and director at <a href="https://2btube.com" target="_blank" rel="noopener">2btube</a>,
+        the leading Spanish-language digital media company, and principal owner at
+        <a href="https://getyourlawyer.ch/en" target="_blank" rel="noopener">GetYourLawyer</a>,
+        a legal marketplace and SaaS platform in Switzerland.
+      </p>
 
-    <p class="quote">"I believe nothing is impossible."</p>
+      <p class="personal">
+        Licensed EASA pilot. Composer, aspiring writer and musician.
+        Active <a href="https://ypo.org" target="_blank" rel="noopener">YPO</a> member. 7 languages.
+      </p>
 
-    <hr class="rule" />
+      <p class="quote">"I believe nothing is impossible."</p>
+    </section>
 
-    <!-- COMPANY -->
-    <section class="company" id="company" aria-labelledby="company-name">
+    <section class="company block" id="company" aria-labelledby="company-name">
       <p class="eyebrow">The company</p>
       <h2 class="company-name" id="company-name">BAMAMEDIA LTD</h2>
 
-      <p>
-        BAMAMEDIA LTD is a Cyprus company through which I provide executive and advisory
-        services to technology and media businesses. It also holds interests in a small
-        number of private ventures. The company supplies services only — it does not trade
-        in goods.
+      <p class="lede">
+        A Cyprus company through which I provide executive and advisory services to technology
+        and media businesses. It also holds interests in a small number of private ventures.
+        The company supplies services only — it does not trade in goods.
       </p>
 
-      <p class="services-label">Services</p>
+      <p class="eyebrow">Services</p>
       <ul class="services">
         <li>Executive leadership on a contract basis — Chief Executive Officer, managing director and equivalent roles</li>
         <li>Strategic and commercial advisory</li>
         <li>Mergers, acquisitions and transaction support</li>
       </ul>
 
-      <p>
-        Current engagement: executive leadership of
-        <a href="https://gobaos.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,24,0.25);">AIP Holding, Inc.</a>
+      <p class="engagement">
+        <strong style="font-weight:400;">Current engagement.</strong>
+        Executive leadership of <a class="inline" href="https://gobaos.com" target="_blank" rel="noopener">AIP Holding, Inc.</a>
         (United States), a technology company building data and analytics software for the
         business aviation market.
       </p>
@@ -343,12 +315,13 @@
         Arch. Makariou III, 195 — Neocleous House, Limassol 3030, Cyprus<br />
         <a href="mailto:bastian@bamamedia.com">bastian@bamamedia.com</a>
       </p>
+
+      <div class="links">
+        <a href="https://www.linkedin.com/in/bastianm/" class="link-btn" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        <a href="mailto:bastian@bamamedia.com" class="link-btn">Email</a>
+      </div>
     </section>
 
-    <div class="links">
-      <a href="https://www.linkedin.com/in/bastianm/" class="link-btn" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
-      <a href="mailto:bastian@bamamedia.com" class="link-btn">Email</a>
-    </div>
   </div>
 
   <!-- PHOTO -->
