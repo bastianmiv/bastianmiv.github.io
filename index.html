@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bastian Manintveld</title>
-  <meta name="description" content="Bastian Manintveld — Multi-exit founder and operator. Building and scaling media, marketing and technology businesses across Europe and the Americas." />
-  
+  <title>Bastian Manintveld — BAMAMEDIA LTD</title>
+  <meta name="description" content="BAMAMEDIA LTD — executive and advisory services to technology and media companies. Bastian Manintveld, multi-exit founder and operator." />
+
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.bamamedia.com/" />
-  <meta property="og:title" content="Bastian Manintveld" />
-  <meta property="og:description" content="Multi-exit founder and operator. Building and scaling media, marketing and technology businesses across Europe and the Americas." />
+  <meta property="og:title" content="Bastian Manintveld — BAMAMEDIA LTD" />
+  <meta property="og:description" content="BAMAMEDIA LTD — executive and advisory services to technology and media companies." />
   <meta property="og:image" content="https://www.bamamedia.com/photo.jpg" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://www.bamamedia.com/" />
-  <meta property="twitter:title" content="Bastian Manintveld" />
-  <meta property="twitter:description" content="Multi-exit founder and operator. Building and scaling media, marketing and technology businesses across Europe and the Americas." />
+  <meta property="twitter:title" content="Bastian Manintveld — BAMAMEDIA LTD" />
+  <meta property="twitter:description" content="BAMAMEDIA LTD — executive and advisory services to technology and media companies." />
   <meta property="twitter:image" content="https://www.bamamedia.com/photo.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -32,6 +32,7 @@
       --dark:  #1A1A18;
       --mid:   #8A8680;
       --accent:#B8975A;
+      --rule:  rgba(26,26,24,0.12);
     }
 
     html, body { height: 100%; }
@@ -113,6 +114,82 @@
       margin-bottom: 3rem;
       max-width: 400px;
     }
+
+    /* ── Company section ── */
+    .rule {
+      width: 100%;
+      max-width: 440px;
+      height: 1px;
+      background: var(--rule);
+      border: 0;
+      margin-bottom: 2.5rem;
+    }
+
+    .company { max-width: 440px; margin-bottom: 2.75rem; }
+
+    .eyebrow {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.85rem;
+    }
+
+    .company-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.4vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+      margin-bottom: 1.1rem;
+    }
+
+    .company p {
+      font-size: 0.9rem;
+      line-height: 1.85;
+      margin-bottom: 1.4rem;
+    }
+
+    .services-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.75rem;
+    }
+
+    .services { list-style: none; margin: 0 0 1.5rem; }
+
+    .services li {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      padding-left: 1.15rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .services li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.78em;
+      width: 6px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .company-meta {
+      font-size: 0.78rem;
+      line-height: 1.85;
+      color: var(--mid);
+    }
+
+    .company-meta a {
+      color: var(--mid);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(138,134,128,0.3);
+    }
+    .company-meta a:hover { color: var(--accent); border-color: var(--accent); }
 
     .links {
       display: flex;
@@ -216,7 +293,7 @@
     <p class="bio">
       Hello, my name is Bastian Manintveld. I'm a multi-exit founder and operator.<br><br>
       I build and scale technology-enabled media and marketing businesses across Europe and the Americas —
-      spanning SaaS, marketplaces, and Film an TV content. I've led P&amp;Ls, raised significant funding,
+      spanning SaaS, marketplaces, and film and TV content. I've led P&amp;Ls, raised significant funding,
       and executed buy- and sell-side transactions across multiple ventures.<br><br>
       I co-founded <a href="https://bebanjo.com" target="_blank" rel="noopener">BeBanjo</a>,
       enterprise media SaaS that powers operations behind some of the world's leading media companies
@@ -233,8 +310,44 @@
 
     <p class="quote">"I believe nothing is impossible."</p>
 
+    <hr class="rule" />
+
+    <!-- COMPANY -->
+    <section class="company" id="company" aria-labelledby="company-name">
+      <p class="eyebrow">The company</p>
+      <h2 class="company-name" id="company-name">BAMAMEDIA LTD</h2>
+
+      <p>
+        BAMAMEDIA LTD is a Cyprus company through which I provide executive and advisory
+        services to technology and media businesses. It also holds interests in a small
+        number of private ventures. The company supplies services only — it does not trade
+        in goods.
+      </p>
+
+      <p class="services-label">Services</p>
+      <ul class="services">
+        <li>Executive leadership on a contract basis — Chief Executive Officer, managing director and equivalent roles</li>
+        <li>Strategic and commercial advisory</li>
+        <li>Mergers, acquisitions and transaction support</li>
+      </ul>
+
+      <p>
+        Current engagement: executive leadership of
+        <a href="https://gobaos.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,24,0.25);">AIP Holding, Inc.</a>
+        (United States), a technology company building data and analytics software for the
+        business aviation market.
+      </p>
+
+      <p class="company-meta">
+        BAMAMEDIA LTD · Registered in Cyprus, no. HE 417176<br />
+        Arch. Makariou III, 195 — Neocleous House, Limassol 3030, Cyprus<br />
+        <a href="mailto:bastian@bamamedia.com">bastian@bamamedia.com</a>
+      </p>
+    </section>
+
     <div class="links">
       <a href="https://www.linkedin.com/in/bastianm/" class="link-btn" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      <a href="mailto:bastian@bamamedia.com" class="link-btn">Email</a>
     </div>
   </div>
 
